@@ -1,0 +1,68 @@
+.login-page-container {
+  background-color: #1f1f1f; /* Цвет фона */
+  color: white; /* Цвет текста */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-container {
+  background-color: #333; /* Цвет фона формы */
+  padding: 25px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form-error {
+  color: #ff3860;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-password-group {
+  position: relative;
+}
+
+.login-password-toggle {
+  position: absolute;
+  right: 3px; /* Небольшой отступ справа */
+  height: 38px; /* Высота равна высоте поля ввода */
+  width: 30px; /* Ширина для размещения иконки */
+  background-color: transparent; /* Прозрачный фон */
+  border: none; /* Убрать стандартную границу */
+  cursor: pointer;
+  outline: none; /* Убрать контур при фокусе для доступности */
+}
+
+.fa-eye, .fa-eye-slash {
+  font-size: 18px;
+  color: #333;
+  background-color: transparent;
+}
+
+.btn.login-form-submit {
+  background-color: #4170DA;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn.login-form-submit:hover {
+  background-color: #365e9d;
+}

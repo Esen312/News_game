@@ -1,0 +1,149 @@
+.navbar {
+  background: #333;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  color: #fff;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.nav-item {
+  line-height: 40px;
+  margin-right: 1rem;
+}
+
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-out;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+}
+
+.nav-links:hover,
+.nav-links-active {
+  color: #4170DA;
+  border-bottom: 2px solid #4170DA;
+}
+
+.nav-search-form {
+  display: flex;
+  align-items: center;
+
+}
+
+.nav-search-input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 4px;
+
+}
+
+.nav-search-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4170DA;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-search-button:hover {
+  background-color: #365A96;
+}
+
+.nav-menu-button {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Adaptive styles */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background: #1f1f1f;
+  }
+
+  .nav-menu-active {
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid #444; /* Optional: adds a border to each nav item */
+  }
+
+  .nav-links {
+    padding: 1.5rem;
+    width: 90%;
+    display: table; /* ensures the full width is clickable */
+    color: #fff;
+  }
+
+  .nav-links:hover {
+    background-color: #555;
+    border-radius: 0;
+  }
+
+  .search-item {
+    padding: 1rem;
+    box-sizing: border-box; /* ensures padding does not increase the width */
+  }
+
+  .nav-search-form {
+    width: 70%;
+    margin: auto;
+  }
+
+  .nav-search-input,
+  .nav-search-button {
+    width: 50%;
+    margin-right: 10px/* spacing between search input and button */
+  }
+
+  .nav-menu-button {
+    display: block;
+  }
+}

@@ -1,0 +1,95 @@
+@import 'quill/dist/quill.snow.css';
+
+.create-news-container {
+  background-color: #1f1f1f; /* Цвет фона */
+  color: white; /* Цвет текста */
+  padding: 20px; /* Побольше отступ для внутреннего контента */
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем содержимое */
+}
+
+.create-news-header {
+  font-size: 1.8rem; /* Размер шрифта заголовка */
+  margin-bottom: 10px; /* Отступ после заголовка */
+}
+
+.create-news-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ширина формы 100% от родителя */
+  max-width: 800px; /* Максимальная ширина формы */
+}
+
+.create-news-form div {
+  margin-bottom: 15px; /* Отступ между полями формы */
+}
+
+.create-news-form label {
+  display: block; /* Занимает всю ширину */
+  margin-bottom: 5px;
+}
+
+.create-news-form input[type="text"],
+.create-news-form textarea,
+.create-news-form select {
+  width: 100%; /* Ширина полей ввода 100% */
+  background-color: #2a2a2a; /* Цвет фона полей ввода */
+  border: 1px solid #333; /* Цвет границы полей ввода */
+  border-radius: 5px;
+  color: white; /* Цвет текста внутри полей ввода */
+  padding: 10px; /* Внутренний отступ полей ввода */
+  font-size: 1rem; /* Размер шрифта */
+}
+
+.create-news-form textarea {
+  height: 150px; /* Устанавливаем высоту */
+}
+
+.create-news-form input[type="file"] {
+  border: none; /* Убираем стандартную рамку */
+  padding: 10px;
+  margin-top: 5px; /* Отступ сверху для кнопки выбора файла */
+  margin-bottom: 0; /* Убираем отступ снизу */
+}
+
+.create-news-form button {
+  background-color: #4170DA; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  padding: 10px 15px;
+  font-size: 1rem; /* Размер шрифта кнопки */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-news-form button:hover {
+  background-color: #365A96; /* Цвет фона кнопки при наведении */
+}
+
+.create-news-tags .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.create-news-tag {
+  background-color: #2a2a2a; /* Цвет фона тега */
+  border: 1px solid #333; /* Цвет границы тега */
+  border-radius: 5px;
+  padding: 5px 10px; /* Отступы вокруг текста тега */
+  color: white;
+  user-select: none; /* Предотвращаем выделение текста */
+  cursor: pointer;
+}
+
+.create-news-tag input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Дополнительный стиль для выделенных тегов */
+.create-news-tag input[type="checkbox"]:checked + span {
+  font-weight: bold; /* Выделяем жирным выбранные теги */
+}

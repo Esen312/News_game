@@ -1,0 +1,158 @@
+.update-news-container {
+  background-color: #1f1f1f; /* Цвет фона */
+  color: white; /* Цвет текста */
+  padding: 20px; /* Отступ для внутреннего контента */
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирование содержимого */
+}
+
+.update-news-header {
+  font-size: 1.8rem; /* Размер шрифта заголовка */
+  margin-bottom: 10px; /* Отступ после заголовка */
+}
+
+.update-news-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ширина формы относительно родителя */
+  max-width: 800px; /* Максимальная ширина формы */
+}
+
+.update-news-form div {
+  margin-bottom: 15px; /* Отступ между полями формы */
+}
+
+.update-news-form label {
+  display: block; /* Занимает всю ширину */
+  margin-bottom: 5px;
+}
+
+.update-news-form input[type="text"],
+.update-news-form textarea,
+.update-news-form select {
+  width: 100%; /* Ширина полей ввода */
+  background-color: #2a2a2a; /* Цвет фона полей ввода */
+  border: 1px solid #333; /* Цвет границы полей ввода */
+  border-radius: 5px;
+  color: white; /* Цвет текста внутри полей ввода */
+  padding: 10px; /* Внутренний отступ полей ввода */
+  font-size: 1rem; /* Размер шрифта */
+}
+
+.update-news-form textarea {
+  height: 350px; /* Высота textarea */
+}
+
+.update-news-form input[type="file"] {
+  display: none; /* Скрытие стандартного input файла */
+}
+
+.file-upload-button {
+  background-color: #4170DA; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.file-upload-button:hover {
+  background-color: #365A96; /* Цвет фона кнопки при наведении */
+}
+
+.file-upload-text {
+  margin-left: 10px; /* Отступ справа от кнопки */
+  color: #aaa; /* Цвет текста для названия файла */
+}
+
+.update-news-tags .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Или любой другой отступ, который вы используете */
+}
+
+.update-news-tag {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.update-news-tag input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+
+/* Дополнительный стиль для выделенных тегов */
+.update-news-tag input[type="checkbox"]:checked + span {
+  font-weight: bold; /* Выделение жирным выбранных тегов */
+}
+
+.submit-button, .delete-button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Занимает всю ширину */
+  margin-top: 10px; /* Отступ сверху для кнопки */
+}
+
+.submit-button {
+  background-color: #4170DA; /* Цвет фона кнопки */
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #365A96; /* Цвет фона кнопки при наведении */
+}
+
+.delete-button {
+  background-color: red; /* Цвет фона кнопки удаления */
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: darkred; /* Цвет фона кнопки удаления при наведении */
+}
+
+/* Стили для отображения текущего фото */
+.file-upload-button {
+  background-color: #4170DA; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  padding: 10px 15px;
+  font-size: 1rem; /* Размер шрифта кнопки */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Центрирование текущего фото */
+}
+
+.cancel-button {
+  background-color: #6c757d; /* Серый цвет для кнопки отмены */
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268; /* Темно-серый цвет при наведении */
+}
+
+.current-news-image {
+  max-width: 100%; /* Максимальная ширина изображения */
+  height: auto; /* Автоматическая высота для поддержания пропорций */
+  border-radius: 5px; /* Скругление углов изображения */
+  margin-bottom: 15px; /* Отступ под изображением */
+}

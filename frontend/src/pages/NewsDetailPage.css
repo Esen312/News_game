@@ -1,0 +1,129 @@
+@import 'quill/dist/quill.snow.css';
+
+.nd-container {
+  background: #202020;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: Roboto,sans-serif;
+}
+
+.nd-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.nd-content img:hover {
+  transform: scale(1.1);
+}
+
+.nd-title {
+  font-size: 2rem;
+  text-align: center;
+  margin: auto;
+}
+
+.nd-image-container {
+  margin: 20px 0;
+  text-align: center; /* Center the image */
+}
+
+.nd-image {
+  max-width: 50%; /* Image takes up to 80% of the container width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px;
+  object-fit: contain; /* Ensures no image cropping */
+}
+
+.nd-content {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 50%;
+  margin: auto;
+  font-family: Roboto,sans-serif;
+}
+
+.nd-meta {
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  max-width: 70%;
+  margin: auto;
+}
+
+.nd-author, .nd-pub-date {
+  font-size: 0.9rem;
+  color: #9e9e9e;
+
+}
+.nd-tags {
+  display: flex;
+  align-items: center;
+  max-width: 70%;
+  margin: auto;
+}
+
+.nd-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nd-tag:hover {
+  background-color: #3f3f3f;
+  color: #4170DA;
+}
+
+.nd-tag:last-child {
+  margin-right: 0;
+}
+
+.loading {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.nd-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.nd-update-button, .nd-delete-button {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nd-update-button {
+  background-color: #4170DA; /* Зеленый цвет для кнопки обновления */
+}
+
+.nd-update-button:hover {
+  background-color: #365A96; /* Темно-зеленый цвет при наведении */
+}
+
+.nd-delete-button {
+  background-color: #f44336; /* Красный цвет для кнопки удаления */
+}
+
+.nd-delete-button:hover {
+  background-color: #d32f2f; /* Темно-красный цвет при наведении */
+}

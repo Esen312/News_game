@@ -1,0 +1,21 @@
+/* Footer.css */
+.footer {
+  background-color: #333; /* Темный фон */
+  color: #fff; /* Белый текст */
+  text-align: center; /* Выравнивание текста по центру */
+  padding: 20px; /* Отступы внутри футера */
+}
+
+.footer-content {
+  margin: auto;
+  max-width: 1200px; /* Максимальная ширина контента футера */
+}
+
+.footer a {
+  color: #0d6efd; /* Цвет ссылок */
+  margin: 0 5px; /* Отступы вокруг ссылок */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
