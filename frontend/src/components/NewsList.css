@@ -22,7 +22,8 @@
 .news-container {
   display: flex;
   flex-direction: column;
-
+  max-width: 100%;
+  margin: auto;
 }
 
 .news-card {
@@ -37,7 +38,7 @@
 
 .news-image {
   width: 250px; /* Фиксированная ширина изображения */
-  height: 169px; /* Высота соотношения сторон 16:9 */
+  height: 170px; /* Высота соотношения сторон 16:9 */
   object-fit: cover; /* Обрезка изображения */
 }
 

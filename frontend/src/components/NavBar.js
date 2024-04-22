@@ -41,6 +41,11 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
+            <NavLink to="/articles" className="nav-links" onClick={() => setIsMobileMenuOpen(false)}>
+              Статьи
+            </NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink to="/login" className="nav-links" onClick={() => setIsMobileMenuOpen(false)}>
               Вход
             </NavLink>

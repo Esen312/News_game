@@ -1,4 +1,4 @@
-.update-news-container {
+.update-article-container {
   background-color: #1f1f1f; /* Цвет фона */
   color: white; /* Цвет текста */
   padding: 20px; /* Отступ для внутреннего контента */
@@ -9,30 +9,30 @@
   align-items: center; /* Центрирование содержимого */
 }
 
-.update-news-header {
+.update-article-header {
   font-size: 1.8rem; /* Размер шрифта заголовка */
   margin-bottom: 10px; /* Отступ после заголовка */
 }
 
-.update-news-form {
+.update-article-form {
   display: flex;
   flex-direction: column;
   width: 100%; /* Ширина формы относительно родителя */
   max-width: 800px; /* Максимальная ширина формы */
 }
 
-.update-news-form div {
+.update-article-form div {
   margin-bottom: 15px; /* Отступ между полями формы */
 }
 
-.update-news-form label {
+.update-article-form label {
   display: block; /* Занимает всю ширину */
   margin-bottom: 5px;
 }
 
-.update-news-form input[type="text"],
-.update-news-form textarea,
-.update-news-form select {
+.update-article-form input[type="text"],
+.update-article-form textarea,
+.update-article-form select {
   width: 100%; /* Ширина полей ввода */
   background-color: #2a2a2a; /* Цвет фона полей ввода */
   border: 1px solid #333; /* Цвет границы полей ввода */
@@ -42,11 +42,11 @@
   font-size: 1rem; /* Размер шрифта */
 }
 
-.update-news-form textarea {
+.update-article-form textarea {
   height: 350px; /* Высота textarea */
 }
 
-.update-news-form input[type="file"] {
+.update-article-form input[type="file"] {
   display: none; /* Скрытие стандартного input файла */
 }
 
@@ -68,7 +68,6 @@
   margin-right: 8px; /* Add some space between icon and text */
 }
 
-
 .file-upload-button:hover {
   background-color: #365A96; /* Цвет фона кнопки при наведении */
 }
@@ -78,13 +77,13 @@
   color: #aaa; /* Цвет текста для названия файла */
 }
 
-.update-news-tags .checkbox-group {
+.update-article-tags .checkbox-group {
   display: flex;
   flex-wrap: wrap;
   gap: 10px; /* Или любой другой отступ, который вы используете */
 }
 
-.update-news-tag {
+.update-article-tag {
   background-color: #2a2a2a;
   border: 1px solid #333;
   border-radius: 5px;
@@ -96,17 +95,17 @@
   align-items: center;
 }
 
-.update-news-tag input[type="checkbox"] {
+.update-article-tag input[type="checkbox"] {
   margin-right: 5px;
 }
 
-
 /* Дополнительный стиль для выделенных тегов */
-.update-news-tag input[type="checkbox"]:checked + span {
+.update-article-tag input[type="checkbox"]:checked + span {
   font-weight: bold; /* Выделение жирным выбранных тегов */
 }
 
-.submit-button, .delete-button {
+.submit-button,
+.delete-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +158,7 @@
   background-color: #5a6268; /* Темно-серый цвет при наведении */
 }
 
-.current-news-image {
+.current-article-image {
   max-width: 100%; /* Максимальная ширина изображения */
   height: auto; /* Автоматическая высота для поддержания пропорций */
   border-radius: 5px; /* Скругление углов изображения */

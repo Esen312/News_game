@@ -3,12 +3,12 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css'; // Импорт стилей Quill
-import './NewsUpdatePage.css';
+import './ArticleUpdatePage.css';
 import UploadIcon from '@mui/icons-material/Upload';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const NewsUpdatePage = () => {
+const ArticleUpdatePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ const NewsUpdatePage = () => {
   const quillRef = useRef(null);
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/news/${id}/`)
+    axios.get(`http://127.0.0.1:8000/api/articles/${id}/`)
       .then(response => {
         const { title, content, tags, author, photo } = response.data;
         setFormData({
@@ -59,9 +59,9 @@ const NewsUpdatePage = () => {
         }
         quillRef.current.root.innerHTML = content;
       })
-      .catch(error => console.error('Error fetching news detail:', error));
+      .catch(error => console.error('Error fetching article detail:', error));
 
-     axios.get('http://127.0.0.1:8000/api/tags/')
+     axios.get('http://127.0.0.1:8000/api/article-tags/')
     .then(response => {
       // Используйте response.data.results для обновления состояния
       setTagsFromAPI(response.data.results);
@@ -101,21 +101,21 @@ const NewsUpdatePage = () => {
       dataToSend.append('photo', formData.photo);
     }
 
-    axios.put(`http://127.0.0.1:8000/api/news/${id}/update/`, dataToSend, {
+    axios.put(`http://127.0.0.1:8000/api/articles/${id}/update/`, dataToSend, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     })
-      .then(() => navigate(`/news/${id}`))
-      .catch(error => console.error('Error updating news:', error));
+      .then(() => navigate(`/articles/${id}`))
+      .catch(error => console.error('Error updating article:', error));
   };
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm('Вы уверены, что хотите удалить эту новость?');
+    const confirmDelete = window.confirm('Вы уверены, что хотите удалить эту статью?');
     if (confirmDelete) {
-      axios.delete(`http://127.0.0.1:8000/api/news/${id}/delete/`)
+      axios.delete(`http://127.0.0.1:8000/api/articles/${id}/delete/`)
         .then(() => navigate('/'))
-        .catch(error => console.error('Error deleting news:', error));
+        .catch(error => console.error('Error deleting article:', error));
     }
   };
 
@@ -123,9 +123,9 @@ const NewsUpdatePage = () => {
 
 
   return (
-    <div className="update-news-container">
-      <h1 className="update-news-header">Обнови Новость</h1>
-      <form onSubmit={handleSubmit} className="update-news-form" encType="multipart/form-data">
+    <div className="update-article-container">
+      <h1 className="update-article-header">Обнови Статью</h1>
+      <form onSubmit={handleSubmit} className="update-article-form" encType="multipart/form-data">
         <div>
           <label>Название</label>
           <input
@@ -134,7 +134,7 @@ const NewsUpdatePage = () => {
             value={formData.title}
             onChange={handleChange}
             required
-            className="update-news-input"
+            className="update-article-input"
           />
         </div>
         <div>
@@ -149,13 +149,13 @@ const NewsUpdatePage = () => {
             value={formData.author}
             onChange={handleChange}
             required
-            className="update-news-input"
+            className="update-article-input"
           />
         </div>
         {currentPhoto && (
           <div className="current-photo-container">
             <label>Обложка Сейчас</label>
-            <img src={currentPhoto} alt="Current" className="current-news-image" />
+            <img src={currentPhoto} alt="Current" className="current-article-image" />
           </div>
         )}
         <div className="file-upload-container">
@@ -171,11 +171,11 @@ const NewsUpdatePage = () => {
           />
           <span className="file-upload-text">{formData.photo ? formData.photo.name : 'Файл не выбран'}</span>
         </div>
-        <div className="update-news-tags">
+        <div className="update-article-tags">
         <label>Теги:</label>
         <div className="checkbox-group">
           {tagsFromAPI.map(tag => ( // Используем tagsFromAPI для отрисовки чекбоксов тегов
-            <label key={tag.id} className="update-news-tag">
+            <label key={tag.id} className="update-article-tag">
               <input
                 type="checkbox"
                 name="tags"
@@ -199,4 +199,4 @@ const NewsUpdatePage = () => {
   );
 };
 
-export default NewsUpdatePage;
+export default ArticleUpdatePage;

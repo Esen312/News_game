@@ -17,11 +17,11 @@ const NewsDetailPage = () => {
   }, [id]);
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this news item?');
+    const confirmDelete = window.confirm('Вы уверены, что хотите удалить эту новость?');
     if (confirmDelete) {
       axios.delete(`http://127.0.0.1:8000/api/news/${id}/delete/`)
         .then(() => {
-          navigate('/');
+          navigate('/news/');
         })
         .catch(error => console.error('Error deleting news:', error));
     }

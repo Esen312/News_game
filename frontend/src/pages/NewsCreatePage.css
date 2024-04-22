@@ -89,7 +89,39 @@
   margin-right: 5px;
 }
 
-/* Дополнительный стиль для выделенных тегов */
 .create-news-tag input[type="checkbox"]:checked + span {
-  font-weight: bold; /* Выделяем жирным выбранные теги */
+  font-weight: bold;
+}
+
+.select-container {
+  margin: 20px 0; /* Отступ сверху и снизу */
+  display: flex;
+  flex-direction: column; /* Делаем направление столбца */
+  width: 100%;
+  max-width: 800px; /* Максимальная ширина, как у формы */
+  padding: 20px;
+}
+
+/* Стилизация label */
+.select-container label {
+  color: #ffffff; /* Цвет текста */
+  margin-bottom: 10px; /* Отступ снизу */
+  font-size: 1rem; /* Размер шрифта */
+}
+
+/* Стилизация самого select */
+.select-container select {
+  padding: 12px; /* Побольше внутренних отступов */
+  background-color: #2a2a2a; /* Цвет фона */
+  border: 1px solid #333; /* Цвет границы */
+  border-radius: 5px;
+  color: white; /* Цвет текста */
+  outline: none; /* Убираем контур при фокусе */
+  cursor: pointer; /* Курсор в виде указателя */
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.select-container option {
+  background-color: #1f1f1f; /* Темный фон для каждого option */
 }

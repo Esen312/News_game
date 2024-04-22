@@ -15,9 +15,9 @@ const NewsCreatePage = () => {
     photo: null,
   });
   const quillRef = useRef(null); // Добавляем ссылку на Quill
+  const [contentType, setContentType] = useState('news');
 
-  // Предполагаем, что у вас есть доступные теги
-  const availableTags = [
+  const newsTags = [
     { id: '1', name: 'PC' },
     { id: '2', name: 'PlayStation 4' },
     { id: '3', name: 'Xbox One' },
@@ -36,6 +36,27 @@ const NewsCreatePage = () => {
     { id: '16', name: 'Железо' },
   ];
 
+  const articleTags = [
+    { id: '3', name: 'PC' },
+    { id: '4', name: 'PlayStation 4' },
+    { id: '5', name: 'Xbox One' },
+    { id: '6', name: 'Киберспорт' },
+    { id: '7', name: 'Фановые' },
+    { id: '8', name: 'Кино' },
+    { id: '9', name: 'Индустрия' },
+    { id: '2', name: 'PlayStation 5' },
+    { id: '11', name: 'Xbox Series X/S' },
+    { id: '12', name: 'Stadia' },
+    { id: '13', name: 'VR' },
+    { id: '14', name: 'Nintendo Switch' },
+    { id: '15', name: 'MMO/MMORPG' },
+    { id: '16', name: 'Мобильные' },
+    { id: '17', name: 'Социальные' },
+    { id: '18', name: 'Железо' },
+  ];
+
+  const tagsToUse = contentType === 'news' ? newsTags : articleTags;
+
   const handleTagChange = (tagId) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -53,6 +74,11 @@ const NewsCreatePage = () => {
     }));
   };
 
+  const handleContentTypeChange = (e) => {
+    setContentType(e.target.value);
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const dataToSend = new FormData();
@@ -63,8 +89,8 @@ const NewsCreatePage = () => {
         dataToSend.append(key, formData[key]);
       }
     }
-
-    axios.post('http://127.0.0.1:8000/api/news/create/', dataToSend, {
+    const endpoint = contentType === 'news' ? 'news/create/' : 'articles/create/';
+    axios.post(`http://127.0.0.1:8000/api/${endpoint}`, dataToSend, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -108,7 +134,19 @@ const NewsCreatePage = () => {
 
   return (
     <div className="create-news-container">
-      <h1 className="create-news-header">Создай Новость</h1>
+      <h1 className="create-news-header">{contentType === 'news' ? 'Создай Новость' : 'Создай Статью'}</h1>
+      <div className="select-container">
+        <label htmlFor="content-type-select">Выберите тип содержимого:</label>
+        <select
+          id="content-type-select"
+          value={contentType}
+          onChange={handleContentTypeChange}
+          className="content-type-select"
+        >
+          <option value="news">Новость</option>
+          <option value="article">Статья</option>
+        </select>
+      </div>
       <form onSubmit={handleSubmit} className="create-news-form" encType="multipart/form-data">
         <div>
           <label>Название</label>
@@ -150,9 +188,9 @@ const NewsCreatePage = () => {
           <span className="file-upload-text">{formData.photo ? formData.photo.name : 'Файл не выбран'}</span>
         </div>
         <div className="create-news-tags">
-          <label>Теги:</label>
+        <label>Теги:</label>
         <div className="checkbox-group">
-          {availableTags.map((tag) => (
+          {tagsToUse.map((tag) => (
             <label key={tag.id} className="create-news-tag">
               <input
                 type="checkbox"
@@ -164,8 +202,8 @@ const NewsCreatePage = () => {
               {tag.name}
             </label>
           ))}
-         </div>
         </div>
+      </div>
         <button type="submit" className="create-news-submit-button">Создать</button>
       </form>
     </div>
